@@ -4,7 +4,7 @@
 	'Bootstrap Form':
 		prefix: 'b-bootstrap-form'
 		body: """
-			<form name="form" novalidate="" autocomplete="off">
+			<form name="${1:name:form}" novalidate="" autocomplete="off">
 
 			</form>
 		"""
@@ -14,10 +14,10 @@
 		prefix: 'b-bootstrap-form-group'
 		body: """
 			<div class="form-group col-sm-X" ng-class="{'has-error': form.${1:name}.$invalid && form.${1:name}.$dirty}">
-			  <label for="${1:name}" class="control-label">${1:name}</label>
+			  <label for="${1:name}" class="control-label">${2:label}</label>
 
 			  <div ng-messages="form.${1:name}.$error" ng-show="form.${1:name}.$invalid && form.${1:name}.$dirty">
-				  <p ng-message="required" class="help-block">Informe o ${1:name}!</p>
+				  <p ng-message="required" class="help-block">Informe o ${2:label}!</p>
 			  </div>
 			</div>
 		"""
@@ -28,7 +28,7 @@
 		body: """
 			<input type="text"
 				   name="${1:name}"
-				   ng-model="vm.${1:model}.${1:name}"
+				   ng-model="vm.${2:model}.${1:name}"
 				   ng-required="${3:true|false}"
 				   class="form-control"
 				/>
@@ -40,7 +40,7 @@
 		body: """
 			<input type="number"
 				   name="${1:name}"
-				   ng-model="vm.${1:model}.${1:name}"
+				   ng-model="vm.${2:model}.${1:name}"
 				   ng-required="${3:true|false}"
 				   class="form-control"
 				/>
@@ -51,7 +51,7 @@
 		prefix: 'b-bootstrap-field-select'
 		body: """
 			<select name="${1:name}"
-					ng-model="vm.${1:model}.${1:name}"
+                    ng-model="vm.${2:model}.${1:name}"
 					ng-options="item as item for item in vm.itens"
 					class="form-control"></select>
 		"""
@@ -63,7 +63,7 @@
 			<p class="form-control-static">
 			   <input type="checkbox"
 					  name="${1:name}"
-					  ng-model="vm.${1:model}.${1:name}"
+   				      ng-model="vm.${2:model}.${1:name}"
 					/>
 			</p>
 		"""
@@ -76,7 +76,7 @@
 				<input
 					type="text"
 					name="${1:name}"
-					ng-model="vm.${1:model}.${1:name}"
+ 				    ng-model="vm.${2:model}.${1:name}"
 					uib-datepicker-popup="{{vm.dateConfig.dateFormat}}"
 					is-open="vm.dateFieldsStatus.${1:name}"
 					datepicker-options="vm.${1:name}DatePickerOptions"
@@ -86,7 +86,7 @@
 					class="form-control"
 					/>
 				<span class="input-group-btn">
-					<button type="button" class="btn btn-default" ng-click="vm.fieldName()">
+					<button type="button" class="btn btn-default" ng-click="vm.${1:name}Open()">
 						<i class="glyphicon glyphicon-calendar"></i>
 					</button>
 				</span>
@@ -100,7 +100,7 @@
 			<textarea name="${1:name}"
 					  rows="5"
 					  cols="40"
-					  ng-model="vm.${1:model}.${1:name}"
+   				      ng-model="vm.${2:model}.${1:name}"
 					  ng-required="${3:true|false}"
 					  class="form-control"
 					  ></textarea>
