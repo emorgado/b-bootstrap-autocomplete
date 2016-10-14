@@ -3,7 +3,7 @@
   "description": "Customized Angular bootstrap autocomplete",
   "repository": "https://github.com/emorgado/b-bootstrap-autocomplete.git",
   "author": "emerson.morgado@gmail.com",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "license": "MIT",
   "activationCommands": {
     "atom-workspace": "b-angular-bootstrap:toggle"
