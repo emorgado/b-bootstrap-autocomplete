@@ -1,20 +1,20 @@
 {
-    "name": "b-bootstrap-autocomplete",
-    "description": "Customized Angular bootstrap autocomplete",
-    "repository": "https://github.com/emorgado/b-bootstrap-autocomplete.git",
-    "author": "emerson.morgado@gmail.com",
-    "version": "0.0.0",
-    "license": "MIT",
-    "activationCommands": {
-        "atom-workspace": "b-angular-bootstrap:toggle"
-    },
-    "keywords": [
-        "angular",
-        "bootstrap",
-        "autocomplete"
-    ],
-    "engines": {
-        "atom": ">=1.0.0 <2.0.0"
-    },
-    "dependencies": {}
+  "name": "b-bootstrap-autocomplete",
+  "description": "Customized Angular bootstrap autocomplete",
+  "repository": "https://github.com/emorgado/b-bootstrap-autocomplete.git",
+  "author": "emerson.morgado@gmail.com",
+  "version": "0.1.0",
+  "license": "MIT",
+  "activationCommands": {
+    "atom-workspace": "b-angular-bootstrap:toggle"
+  },
+  "keywords": [
+    "angular",
+    "bootstrap",
+    "autocomplete"
+  ],
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "dependencies": {}
 }
