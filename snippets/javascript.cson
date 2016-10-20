@@ -155,3 +155,15 @@
 
             })(angular);
             """
+
+    # Angular then expression, to work with assync callback's
+    'Angular then expression, to work with assync callback\'s':
+        prefix: 'b-then-callback'
+        body:
+            """
+            .then( function success(response){
+                console.log(response);
+            }, function error(response){
+                console.error(response);
+            });
+            """

@@ -77,7 +77,7 @@
 					type="text"
 					name="${1:name}"
  				    ng-model="vm.${2:model}.${1:name}"
-					uib-datepicker-popup="{{vm.dateConfig.dateFormat}}"
+					uib-datepicker-popup="vm.dateConfig.dateFormat"
 					is-open="vm.dateFieldsStatus.${1:name}"
 					datepicker-options="vm.${1:name}DatePickerOptions"
 					ng-required="true"
