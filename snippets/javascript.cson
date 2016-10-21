@@ -90,6 +90,8 @@
                 function ${3:controlleName}Ctrl(){
                     var vm = this;
 
+                    vm.resourceNamePluralized = "${3:controllerName}s";
+
                     // --- Initialization
 
                     // --- Implementation
