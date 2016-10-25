@@ -85,9 +85,9 @@
                     .module('${1:application}.${2:module}')
                     .controller('${3:controlleName}Ctrl', ${3:controlleName}Ctrl);
 
-                ${3:controlleName}Ctrl.$inject = [];
+                ${3:controlleName}Ctrl.$inject = ['$log'];
 
-                function ${3:controlleName}Ctrl(){
+                function ${3:controlleName}Ctrl($log){
                     var vm = this;
 
                     vm.resourceNamePluralized = "${3:controllerName}s";
@@ -112,18 +112,19 @@
                     .module('${1:application}.${2:module}')
                     .factory('${3:serviceName}APIService', ${3:serviceName}APIService);
 
-                ${3:serviceName}APIService.$inject = ['$http'];
+                ${3:serviceName}APIService.$inject = ['$http', '$log'];
 
-                function ${3:serviceName}APIService($http){
+                function ${3:serviceName}APIService($http, $log){
                     var service = {
-                        doSomething: doSomething
+                        search: search
                     };
                     return service;
 
                     // -- Implementation
-                    function doSomething(){
-
+                    function search(queryString){
+                        return $http.get('api/${3:serviceName}/search'.concat(queryString));
                     }
+
                 }
 
             })(angular);
@@ -150,7 +151,10 @@
                             isArray: false
                         },
                         update: {
-                            method: 'POST'
+                            method: 'PUT',
+                            params: {
+                                id: "@id"
+                            }
                         }
                     });
                 }
@@ -164,8 +168,8 @@
         body:
             """
             .then( function success(response){
-                console.log(response);
+                $log.info(response);
             }, function error(response){
-                console.error(response);
+                $log.error(response);
             });
             """
