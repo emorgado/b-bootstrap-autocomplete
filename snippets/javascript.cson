@@ -85,8 +85,7 @@
                     .module('${1:application}.${2:module}')
                     .controller('${3:controlleName}Ctrl', ${3:controlleName}Ctrl);
 
-                ${3:controlleName}Ctrl.$inject = ['$log'];
-
+                /* @ngInject */
                 function ${3:controlleName}Ctrl($log){
                     var vm = this;
 
@@ -112,8 +111,7 @@
                     .module('${1:application}.${2:module}')
                     .factory('${3:serviceName}APIService', ${3:serviceName}APIService);
 
-                ${3:serviceName}APIService.$inject = ['$http', '$log'];
-
+                /* @ngInject */
                 function ${3:serviceName}APIService($http, $log){
                     var service = {
                         search: search
@@ -142,8 +140,7 @@
                     .module('${1:application}.${2:module}')
                     .factory('${3:resourceName}', ${3:resourceName});
 
-                ${3:resourceName}.$inject = ['$resource'];
-
+                /* @ngInject */
                 function ${3:resourceName}($resource){
                     return $resource('/api/${4:resourcePath}/:id', {}, {
                         query: {
